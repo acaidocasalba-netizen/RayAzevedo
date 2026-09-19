@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ray Azevedo | Beleza & Estética</title>
+
+  <meta
+    name="description"
+    content="Ray Azevedo Beleza & Estética — salão de beleza em Lauro de Freitas - BA."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080706;
+      color: #f7f1e8;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    :root {
+      --bg: #080706;
+      --bg2: #0d0b09;
+      --gold: #d2a75e;
+      --gold2: #e8c47e;
+      --cream: #f7f1e8;
+      --muted: #b5aca1;
+      --line: rgba(213, 167, 94, .35);
+    }
+
+    .topbar {
+      background: #050505;
+      border-bottom: 1px solid var(--line);
+      padding: 9px 20px;
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 7, 6, .95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand img {
+      width: 145px;
+      max-height: 58px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ddd4ca;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--gold2);
+    }
+
+    .nav-btn {
+      border: 1px solid var(--gold);
+      padding: 12px 18px;
+      color: var(--gold2);
+      font-size: 12px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 720px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 35%, rgba(210,167,94,.12), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(210,167,94,.06), transparent 30%),
+        var(--bg);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 30px;
+      border: 1px solid rgba(210,167,94,.12);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(1000px, 90%);
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--gold2);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1,
+    h2,
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: .98;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--gold2);
+    }
+
+    .hero-text {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border: 1px solid var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+      font-weight: bold;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #080706;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold2);
+    }
+
+    .btn-outline {
+      color: var(--gold2);
+    }
+
+    .btn-outline:hover {
+      background: rgba(210,167,94,.1);
+    }
+
+    .hero-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-logo img {
+      width: min(360px, 80%);
+      max-height: 330px;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,.5));
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 55px;
+    }
+
+    .section-head .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(36px, 5vw, 55px);
+      margin-bottom: 15px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    .services {
+      background: var(--bg2);
+      border-top: 1px solid rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 35px 25px;
+      min-height: 220px;
+      border: 1px solid rgba(210,167,94,.22);
+      background: linear-gradient(145deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .service-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      font-weight: 400;
+      margin: 28px 0 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .booking {
+      background: #0a0908;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .booking-info h2 {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .booking-info p {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--gold2);
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .contact-item span {
+      color: #ddd4ca;
+    }
+
+    form {
+      border: 1px solid rgba(210,167,94,.28);
+      padding: 35px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .form-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: #d7cec4;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.12);
+      background: #11100e;
+      color: #f7f1e8;
+      padding: 14px;
+      outline: none;
+      font-family: inherit;
+      border-radius: 0;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    form .btn {
+      width: 100%;
+      margin-top: 22px;
+    }
+
+    .instagram {
+      text-align: center;
+      background: var(--bg2);
+      border-top: 1px solid rgba(255,255,255,.05);
+    }
+
+    .instagram a {
+      color: var(--gold2);
+    }
+
+    footer {
+      padding: 50px 0 25px;
+      border-top: 1px solid var(--line);
+      background: #050505;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-logo img {
+      width: 150px;
+      max-height: 60px;
+      object-fit: contain;
+    }
+
+    .footer-info {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .copyright {
+      text-align: center;
+      color: #777068;
+      font-size: 11px;
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    @media (max-width: 900px) {
+      .hero-content,
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 90px 0;
+      }
+
+      .hero-logo {
+        order: -1;
+      }
+
+      .hero-logo img {
+        width: 220px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        flex-direction: column;
+        gap: 3px;
+        text-align: center;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .brand img {
+        width: 115px;
+      }
+
+      .nav-btn {
+        padding: 10px 12px;
+        font-size: 10px;
+      }
+
+      .hero-content {
+        gap: 35px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      form {
+        padding: 23px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-info {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <span>📍 Lauro de Freitas - BA</span>
+    <span>◷ Atendimento com hora marcada</span>
+  </div>
+
+  <header>
+    <div class="container nav">
+
+      <a href="#inicio" class="brand">
+        <img
+          src="assets/logotipo.png.JPG"
+          alt="Ray Azevedo Beleza e Estética"
+        >
+      </a>
+
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#agendamento">Agendamento</a>
+        <a href="#contato">Contato</a>
+
+        <a href="#agendamento" class="nav-btn">
+          Agendar horário
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+
+        <div>
+          <div class="eyebrow">
+            Ray Azevedo • Beleza & Estética
+          </div>
+
+          <h1>
+            Beleza que<br>
+            <span>valoriza você.</span>
+          </h1>
+
+          <p class="hero-text">
+            Um espaço dedicado à beleza, ao cuidado e à autoestima,
+            com atendimento personalizado e horário reservado para você.
+          </p>
+
+          <div class="actions">
+            <a href="#agendamento" class="btn btn-primary">
+              Quero agendar
+            </a>
+
+            <a href="#servicos" class="btn btn-outline">
+              Conhecer serviços
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-logo">
+          <img
+            src="assets/logotipo.png.JPG"
+            alt="Ray Azevedo Beleza e Estética"
+          >
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="services" id="servicos">
+
+      <div class="container">
+
+        <div class="section-head">
+          <div class="eyebrow">Nossos serviços</div>
+
+          <h2>
+            Cuidado em cada detalhe
+          </h2>
+
+          <p>
+            Serviços pensados para proporcionar beleza,
+            cuidado e uma experiência especial.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <span class="service-number">01</span>
+
+            <h3>Cabelos</h3>
+
+            <p>
+              Cortes, escovas, coloração, tratamentos,
+              mechas e cuidados personalizados.
+            </p>
+          </article>
+
+
+          <article class="service-card">
+            <span class="service-number">02</span>
+
+            <h3>Unhas</h3>
+
+            <p>
+              Cuidados para mãos e pés com acabamento
+              delicado e profissional.
+            </p>
+          </article>
+
+
+          <article class="service-card">
+            <span class="service-number">03</span>
+
+            <h3>Estética</h3>
+
+            <p>
+              Procedimentos de estética e cuidados
+              voltados ao bem-estar.
+            </p>
+          </article>
+
+
+          <article class="service-card">
+            <span class="service-number">04</span>
+
+            <h3>Sobrancelhas</h3>
+
+            <p>
+              Design e cuidados para valorizar
+              a expressão e a beleza natural.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="booking" id="agendamento">
+
+      <div class="container booking-grid">
+
+        <div class="booking-info">
+
+          <div class="eyebrow">
+            Atendimento personalizado
+          </div>
+
+          <h2>
+            Agende seu horário
+          </h2>
+
+          <p>
+            Preencha seus dados e escolha o serviço
+            desejado. Seu pedido será enviado diretamente
+            para o WhatsApp do salão.
+          </p>
+
+
+          <div class="contact-item">
+            <strong>Localização</strong>
+            <span>Lauro de Freitas - BA</span>
+          </div>
+
+
+          <div class="contact-item">
+            <strong>Instagram</strong>
+            <span>@rayazevedobelezaeestetica</span>
+          </div>
+
+
+          <div class="contact-item">
+            <strong>Atendimento</strong>
+            <span>Com hora marcada</span>
+          </div>
+
+        </div>
+
+
+        <form id="bookingForm">
+
+          <div class="form-title">
+            Solicitar agendamento
+          </div>
+
+
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="nome">Nome</label>
+
+              <input
+                type="text"
+                id="nome"
+                placeholder="Seu nome"
+                required
+              >
+            </div>
+
+
+            <div class="field">
+              <label for="whatsapp">WhatsApp</label>
+
+              <input
+                type="tel"
+                id="whatsapp"
+                placeholder="(71) 99999-9999"
+                required
+              >
+            </div>
+
+
+            <div class="field">
+              <label for="servico">Serviço</label>
+
+              <select id="servico" required>
+                <option value="">Selecione</option>
+                <option>Cabelos</option>
+                <option>Unhas</option>
+                <option>Estética</option>
+                <option>Sobrancelhas</option>
+                <option>Outro</option>
+              </select>
+            </div>
+
+
+            <div class="field">
+              <label for="profissional">Profissional</label>
+
+              <select id="profissional">
+                <option value="">A definir</option>
+                <option>Ray Azevedo</option>
+                <option>Outra profissional</option>
+              </select>
+            </div>
+
+
+            <div class="field">
+              <label for="data">Data desejada</label>
+
+              <input
+                type="date"
+                id="data"
+                required
+              >
+            </div>
+
+
+            <div class="field">
+              <label for="horario">Horário</label>
+
+              <input
+                type="time"
+                id="horario"
+                required
+              >
+            </div>
+
+
+            <div class="field full">
+              <label for="observacao">Observação</label>
+
+              <textarea
+                id="observacao"
+                placeholder="Alguma informação importante?"
+              ></textarea>
+            </div>
+
+          </div>
+
+
+          <button type="submit" class="btn btn-primary">
+            Enviar pelo WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <section class="instagram" id="contato">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="eyebrow">
+            Acompanhe nosso trabalho
+          </div>
+
+          <h2>
+            Siga no Instagram
+          </h2>
+
+          <p>
+            Veja novidades, resultados e serviços.
+          </p>
+
+          <br>
+
+          <a
+            href="https://instagram.com/rayazevedobelezaeestetica"
+            target="_blank"
+            class="btn btn-outline"
+          >
+            @rayazevedobelezaeestetica
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-logo">
+          <img
+            src="assets/logotipo.png.JPG"
+            alt="Ray Azevedo Beleza e Estética"
+          >
+        </div>
+
+        <div class="footer-info">
+          <div>Lauro de Freitas - BA</div>
+          <div>Atendimento com hora marcada</div>
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Ray Azevedo Beleza & Estética. Todos os direitos reservados.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+    document
+      .getElementById("bookingForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const nome =
+          document.getElementById("nome").value.trim();
+
+        const whatsapp =
+          document.getElementById("whatsapp").value.trim();
+
+        const servico =
+          document.getElementById("servico").value;
+
+        const profissional =
+          document.getElementById("profissional").value ||
+          "A definir";
+
+        const data =
+          document.getElementById("data").value;
+
+        const horario =
+          document.getElementById("horario").value;
+
+        const observacao =
+          document.getElementById("observacao").value.trim() ||
+          "Nenhuma";
+
+
+        const mensagem =
+`Olá! Gostaria de solicitar um agendamento na Ray Azevedo Beleza & Estética.
+
+Nome: ${nome}
+WhatsApp: ${whatsapp}
+Serviço: ${servico}
+Profissional: ${profissional}
+Data desejada: ${data}
+Horário desejado: ${horario}
+Observação: ${observacao}`;
+
+
+        const numero =
+          "5571984142742";
+
+        const url =
+          "https://wa.me/" +
+          numero +
+          "?text=" +
+          encodeURIComponent(mensagem);
+
+        window.open(url, "_blank");
+
+      });
+  </script>
+
+</body>
+</html>
